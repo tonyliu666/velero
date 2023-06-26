@@ -1,0 +1,12 @@
+version: "1"
+packages:
+    - name: "db" #the package name called db
+      path: "./db/sqlc" #path to store the generated golang codes
+      queries: "./db/query/" #store the queries you want code generators to transform
+      schema: "./db/migration" #path to store db schema or migration files
+      engine: "postgresql" #what the database is and like to use 
+      emit_json_tags: true # you want sqlc to generate the jsons with golang struct 
+      emit_prepared_queries: false #If true, include support for prepared queries. it can liftup performance
+      emit_interface: false  #If true,then it will create query interface if you want to do some testings.(unit testing)
+      emit_exact_table_names: false #sqlc would singuraize the db table name, 
+      #eg: if using the name: Accounts --> accounts(if set this value to true)
