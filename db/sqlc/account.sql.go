@@ -19,6 +19,7 @@ INSERT INTO accounts (
 )
 RETURNING id, owner, balance, currency, created_at
 `
+//a new one
 
 type CreateAccountParams struct {
 	Owner    string `json:"owner"`
